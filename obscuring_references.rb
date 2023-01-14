@@ -23,7 +23,12 @@ class RevealingReferences
   end
 
   def diameters
-    wheels.collect { |wheel| wheel.rim + (wheel.tire * 2) }
+    # p wheels
+    wheels.collect { |wheel| diameter(wheel) }
+  end
+
+  def diameter(wheel)
+    wheel.rim + (wheel.tire * 2)
   end
 
   Wheel = Struct.new(:rim, :tire)
@@ -34,9 +39,9 @@ class RevealingReferences
   end
 end
 
-o = ObscuringReferences.new([[622, 20], [622, 23], [559, 30], [559, 40]])
+# o = ObscuringReferences.new([[622, 20], [622, 23], [559, 30], [559, 40]])
 # p o.data
-p o.diameters
+# p o.diameters
 
 o2 = RevealingReferences.new([[622, 20], [622, 23], [559, 30], [559, 40]])
 p o2.diameters
