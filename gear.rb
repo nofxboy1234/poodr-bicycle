@@ -14,9 +14,6 @@ class Gear
   def gear_inches
     ratio * wheel.diameter
   end
-
-  Wheel = Struct.new(:rim, :tire) do
-  end
 end
 
 class Wheel
