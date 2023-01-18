@@ -15,6 +15,8 @@ class Gear
     ratio * diameter
   end
 
+  private
+
   def diameter
     wheel.diameter
   end
